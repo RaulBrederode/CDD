@@ -1,0 +1,31 @@
+usuarios = []
+senhas = []
+def par(n):
+    if n % 2 == 0:
+        print("Número par")
+def impar(m):
+    if m %2 != 0:
+        print("Número ímpar.")
+def cadastro():
+    usuarios = []
+    senhas = []
+    nome = input("Digite o nome de usuário: ")
+    senha = input("Digite a senha: ")
+    usuarios.append(nome)
+    senhas.append(senha)
+    print("Usuário cadastrado com sucesso!")
+def mostrar():
+    for i in range(len(usuarios)):
+        print(f"Usuário: {usuarios[i]}")
+        print(f"Senha: {senhas[i]}")
+def login():
+    nomelogin = input("Digite o nome de usuário: ")
+    senhalogin = input("Digite a senha: ")
+    if nomelogin in usuarios:
+        indice = usuarios.index(nomelogin)
+        if senhalogin == senhas[indice]:
+            print("Login efetuado com sucesso!")
+        else:
+            print("Senha incorreta. Tente novamente.")
+    else:
+        print("Usuário não encontrado. Por favor, verifique o nome de usuário.")
