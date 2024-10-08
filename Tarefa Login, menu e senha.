@@ -1,0 +1,24 @@
+from biblioteca import cadastro
+from biblioteca import login
+from biblioteca import mostrar
+usuarios = []
+senhas = []
+while True:
+    print("\nMenu:")
+    print("1 - Cadastrar usuário")
+    print("2 - Listar usuários")
+    print("3 - Fazer login")
+    print("4 - Sair")
+    opcao = int(input("Escolha uma opção: "))
+
+    if opcao == 1:
+        cadastro()
+    elif opcao == 2:
+        mostrar()
+    elif opcao == 3:
+        login()
+    elif opcao == 4:
+        print("Saindo do programa...")
+        break
+    else:
+        print("Opção inválida. Por favor, escolha uma opção válida entre 1 e 4.")
