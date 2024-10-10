@@ -1,11 +1,15 @@
 def par(n):
     if n % 2 == 0:
-        print("Número é par.")
+        print(f"{n} é um número PAR.")
+    else:
+        print(f"{n} não é um número PAR.")
 
 
 def impar(n):
     if n % 2 != 0:
-        print("Número ímpar.")
+        print(f"{n} é um número ÍMPAR.")
+    else:
+        print(f"{n} não é um número Ímpar")
 
 
 usuarios = []
