@@ -1,39 +1,53 @@
 class Pessoa:
-    def __init__(self, n, p, i):
-        self.nome = n
-        self.peso = p
-        self.idade = i
-        self.andando = False
-        self.comendo = False
-        self.dormindo = False
+    def __init__(self, nome, peso, idade):
+        self.nome = nome
+        self.peso = peso
+        self.idade = idade
+        self.estado = "parado"  # Estado inicial: parado
+
+    def mudar_estado(self, novo_estado):
+        if self.estado == novo_estado:
+            print(f"{self.nome} já está {novo_estado}.")
+        elif self.estado == "dormindo" and novo_estado != "parado":
+            print(f"{self.nome} está dormindo e precisa acordar para {novo_estado}.")
+        else:
+            self.estado = novo_estado
+            print(f"{self.nome} agora está {novo_estado}.")
+
     def andar(self):
-        if self.andando:
-            self.andando=True
-            print(f"{self.nome} está andando.")
+        if self.estado == "dormindo":
+            print(f"{self.nome} precisa acordar antes de andar.")
+        else:
+            self.mudar_estado("andando")
 
-
-    def comendo(self):
-        resposta = str(input(f"{self.nome} está comendo?\n"
-                             f"[ 1 ] True\n"
-                             f"[ 2 ] False\n"
-                             f"Sua resposta: "))
-        if resposta == "1" is True:
-            print("Está comendo.")
-            if resposta == True:
-                print(f"{self.nome} já está comendo, não pode comer mais.")
-        elif resposta != "1" is False:
-            print("Não está comendo.")
-
+    def comer(self):
+        if self.estado == "dormindo":
+            print(f"{self.nome} precisa acordar antes de comer.")
+        else:
+            self.mudar_estado("comendo")
 
     def dormir(self):
-        print(f"{self.nome} foi dormir.")
+        if self.estado == "andando":
+            print(f"{self.nome} precisa parar de {self.estado} antes de dormir.")
+        if self.estado == "comendo":
+            print(f"{self.nome} precisa parar de comer antes de dormir.")
+        else:
+            self.mudar_estado("dormindo")
 
-    def parardeComer(self):
+    def parar_de_andar(self):
+        if self.estado == "andando":
+            self.mudar_estado("parado")
+        else:
+            print(f"{self.nome} não está andando.")
 
+    def parar_de_comer(self):
+        if self.estado == "comendo":
+            self.mudar_estado("parado")
+        else:
+            print(f"{self.nome} não está comendo.")
 
-    def parardeAndar(self):
-        if self.andando:
-            self.andando=True
-            print()
-
-    def parardeDormir(self):
+    def parar_de_dormir(self):
+        if self.estado == "dormindo":
+            self.mudar_estado("parado")
+        else:
+            print(f"{self.nome} não está dormindo.")
