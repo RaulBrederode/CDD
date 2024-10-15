@@ -1,5 +1,5 @@
 class Pessoa:
-    def __init__(self, nome, peso, idade):
+    def __init__(self, nome, peso, idade):  # método construtor
         self.nome = nome
         self.peso = peso
         self.idade = idade
@@ -10,6 +10,8 @@ class Pessoa:
             print(f"{self.nome} já está {novo_estado}.")
         elif self.estado == "dormindo" and novo_estado != "parado":
             print(f"{self.nome} está dormindo e precisa acordar para {novo_estado}.")
+        elif self.estado == "comendo" and novo_estado == "andando":
+            print(f"{self.nome} está comendo e precisa parar de de comer para andar")
         else:
             self.estado = novo_estado
             print(f"{self.nome} agora está {novo_estado}.")
