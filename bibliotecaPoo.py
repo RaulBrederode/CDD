@@ -53,3 +53,43 @@ class Pessoa:
             self.mudar_estado("parado")
         else:
             print(f"{self.nome} não está dormindo.")
+
+
+class Animal:
+    def __init__(self, nome, cor):
+        self.nome = nome
+        self.cor = cor
+
+
+    def Comer(self):
+        print(f"O {self.nome} está comendo.")
+
+
+class Gato(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+
+    def miar(self):
+        print(f"O {self.nome} foi miar...")
+
+class Cachorro(Animal):
+    def __init__(self,nome, cor):
+        super().__init__(nome, cor)
+
+    def latir(self):
+        print(f"O {self.nome} foi latir ...")
+
+class Coelho(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+
+    def guinchar(self):
+        print(f"O {self.nome} foi guinchar...")
+        
+class Vaca(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+    
+    def mugir(self):
+        print(f"O {self.nome} foi mugir...")
+        
