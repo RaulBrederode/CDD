@@ -1,0 +1,2 @@
+from menuopen import *
+menu()
